@@ -29,13 +29,13 @@ public class SceneDepth_ImageEffect : MonoBehaviour
 	
 	void Start()
 	{
-		if(!SystemInfo.supportsImageEffects)
+		if (!SystemInfo.supportsImageEffects)
 		{
 			enabled = false;
 			return;
 		}
-		
-		if(!curShader && !curShader.isSupported)
+
+		if (!curShader && !curShader.isSupported)
 		{
 			enabled = false;
 		}

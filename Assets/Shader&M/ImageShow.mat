@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pixel
-  m_Shader: {fileID: 4800000, guid: 18bee1b14c50a47608c86af927105b44, type: 3}
+  m_Name: ImageShow
+  m_Shader: {fileID: 4800000, guid: 944bb73d69b4ad24abc60216d48fe588, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -69,7 +69,6 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PixelSize: 113
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
