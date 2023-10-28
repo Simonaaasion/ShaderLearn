@@ -1,12 +1,12 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Camera))] // 需要相机组件
+[RequireComponent(typeof(Camera))] 
 public class MotionBlur : MonoBehaviour
 {
     [Range(0.0f, 0.9f)]
-    public float blurAmount = 0.5f; // 模糊值, 值越大拖尾效果越明显
-    private RenderTexture historyTexture; // 历史屏幕纹理
-    private Material material = null; // 材质
+    public float blurAmount = 0.5f; 
+    private RenderTexture historyTexture; 
+    private Material material = null; 
 
     private void Start()
     {
@@ -15,7 +15,7 @@ public class MotionBlur : MonoBehaviour
     }
 
     void OnDisable()
-    { // 脚本不运行时立即销毁, 下次开始应用运动模糊时, 重新混合图像
+    { 
         DestroyImmediate(historyTexture);
     }
 
@@ -23,7 +23,7 @@ public class MotionBlur : MonoBehaviour
     {
         if (material != null)
         {
-            // 初始化时或窗口尺寸变化时, 创建叠加纹理
+            
             if (historyTexture == null || historyTexture.width != src.width || historyTexture.height != src.height)
             {
                 DestroyImmediate(historyTexture);
@@ -31,7 +31,7 @@ public class MotionBlur : MonoBehaviour
                 historyTexture.hideFlags = HideFlags.HideAndDontSave;
                 Graphics.Blit(src, historyTexture);
             }
-            material.SetFloat("_BlurAmount", 1.0f - blurAmount); // 设置模糊值, 通过alpha通道控制当前屏幕纹理与历史屏幕纹理进行混合
+            material.SetFloat("_BlurAmount", 1.0f - blurAmount); 
             Graphics.Blit(src, historyTexture, material);
             Graphics.Blit(historyTexture, dest);
         }

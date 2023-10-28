@@ -18,7 +18,6 @@ Shader "Custom/RenderImage/ScreenBroken" {
 			#pragma vertex vert
 			#pragma fragment frag
  
-			//这一部分参数的定义要根据Properties
 			fixed4 _Color;
 			sampler2D _MainTex;
 			float4 _MainTex_ST;
@@ -31,7 +30,6 @@ Shader "Custom/RenderImage/ScreenBroken" {
 				float4 texcoord : TEXCOORD0;
 			};
  
-			//输出部分要和输入部分对应起来,而输出部分又要由片元着色器里的计算模型来确定
 			struct v2f{
 				float4 pos : SV_POSITION;
 				float4 uv : TEXCOORD0;

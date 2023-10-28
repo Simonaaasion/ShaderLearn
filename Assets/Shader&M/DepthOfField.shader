@@ -92,7 +92,6 @@ Shader "DepthOfFiled"
         fixed4 b = tex2D(_BlurTex,i.uv);
 
         float depth = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, i.uv);  
-        //将深度值转化到01线性空间  
         depth = Linear01Depth(depth); 
 
         return lerp(c,b,saturate(sign(abs(depth-_FocusDistance)-_FocusRange)));
